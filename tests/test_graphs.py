@@ -28,13 +28,12 @@ class TestInteractionGraph:
         )
         sub_graph = interaction_graph.sub_graph_from_node_propagation(
             nodes=["Q9BYF1"],
-            diameter=2,
+            diameter=1,
             tissue="lung",
             score_threshold=0.9,
             expression_threshold=0.0,
         )
-        interaction_graph.most_affected_biological_processes(sub_graph, "lung", limit=20)
-        interaction_graph.most_affected_cellular_components(sub_graph, "lung", limit=20)
+        interaction_graph.print_sub_graph_nodes(sub_graph, print_spec="i_o_p_m", limit=10)
         interaction_graph.classify_tissue_by_node_expression(["Q9BYF1"])
         interaction_graph.most_present_biological_processes(
             sub_graph, bp_size_thresh=500, tissue="lung", limit=20
