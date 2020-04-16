@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
-This repo provides human protein-protein interaction graph in the form of networkX graph and additional data about covid-19 virus to study virus-human interactions at protein level. It is intended for Data Scientist and Machine Learning researchers who want to contribute with AI Research to medical discoveries during the pandemic. 
+This repository provides a human protein-protein interaction graph in the form of the networkX graph and additional data about the COVID-19 virus to study virus-human interactions at the protein level. It is intended for Data Scientist and Machine Learning researchers who want to contribute with AI Research to medical discoveries during the pandemic. 
 
 The protein-protein interaction graph not only stores interaction but also several informations about the type of interaction and protein involved (see nodes in graph).
 
@@ -28,7 +28,7 @@ We gathered data from several sources:
 pip install pybiographs # Not available
 ```
 
-Note : For now, just cloning available. As soon as the repo become non-beta, a pip package will be registered
+Note : For now, just the cloning is available. As soon as the repository becomes non-beta, a pip package will be registered.
 
 ## Usage
 
@@ -150,7 +150,7 @@ The method getitem(ix) will return :
 * (node_attribute_protein_a, node_attribute_protein_b, link_type, label) if directed, with label between 0 and 1 if edge regression task else 0 or 1)
 * (node_attribute_protein_a, node_attribute_protein_b, label) if undirected, with label between 0 and 1 if edge regression task else 0 or 1)
 
-Note: to create the classification dataset, the constructor creates labels with 0.0 by selecting edges that are not in the graph. For creating a balanced classification dataset, you should put a ratio of 1.0 to create as much 0.0 labels as 1.0 labels. You can play with the score_threshold to restrict size of existing edges.
+Note: to create the classification dataset, the constructor creates labels with 0.0 by selecting edges that are not in the graph. For creating a balanced classification dataset, you should put a ratio of 1.0 to create as much 0.0 labels as 1.0 labels. You can play with the score_threshold to restrict the size of existing edges.
 
 Example :
 
