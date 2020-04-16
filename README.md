@@ -110,7 +110,7 @@ OntologyGraph('biological_processes') : returns a wrapped networkX directed nx.D
   
 ## Covid19 data
 
-* data/covid/covid_data.pck : dict containing data about proteins involved in covid-19 from https://covid-19.uniprot.org/uniprotkb?query=*:
+* covid_data.dict : dict containing data about proteins involved in covid-19 from https://covid-19.uniprot.org/uniprotkb?query=*:
   * key human : homo sapiens protein or not
   * key sequance : amino acid sequence of the protein
   * key molecular_functions : same as for nodes of protein-protein interaction graph
