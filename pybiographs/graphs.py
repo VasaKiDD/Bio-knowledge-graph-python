@@ -107,7 +107,8 @@ class InteractionGraph:
             sub_search: the list request.
             nodes: nodes to be searched.
 
-        Returns: a list containing proteins satisfying results
+        Returns:
+            a list containing proteins satisfying results.
 
         """
         res = []
@@ -160,7 +161,8 @@ class InteractionGraph:
             tissue: a string key for tissue.
             threshold: float between 0 and 1.
 
-        Returns: new list containing nodes that satisfy threshold properties.
+        Returns:
+            new list containing nodes that satisfy threshold properties.
 
         """
         new_nodes = []
@@ -184,7 +186,8 @@ class InteractionGraph:
             score_threshold: attribute score threshold, should be between 0 and 1.
             as edge scores are.
 
-        Returns: cleaned graph.
+        Returns:
+            cleaned graph.
 
         """
         to_remove = []
@@ -210,7 +213,8 @@ class InteractionGraph:
             reg: regex to be search as a string.
             attribute: "info" or "sequence".
 
-        Returns: union of matching nodes and res.
+        Returns:
+            union list of matching nodes and res.
 
         """
         sub_res = []
@@ -229,7 +233,8 @@ class InteractionGraph:
             res: entry node list corresponding to query results so far.
             reg: regex to be search as a string.
 
-        Returns: union of matching nodes and res.
+        Returns:
+            union list of matching nodes and res.
 
         """
         sub_res = []
@@ -252,7 +257,8 @@ class InteractionGraph:
             res: entry node list corresponding to query results so far.
             reg: regex to be search as a string.
 
-        Returns: union of matching nodes and res.
+        Returns:
+            union list of matching nodes and res.
 
         """
         sub_res = []
@@ -292,7 +298,8 @@ class InteractionGraph:
             res: entry node list corresponding to query results so far.
             reg: regex to be search as a string.
 
-        Returns: union of matching nodes and res.
+        Returns:
+            union list of matching nodes and res.
 
         """
         sub_res = []
@@ -326,7 +333,8 @@ class InteractionGraph:
             expression_threshold: threshold to apply to expression score in tissue.
             Ignored if tissue is None.
 
-        Returns: New sub graph
+        Returns:
+            New sub graph.
 
         """
         spec = spec.split("_")
@@ -372,7 +380,8 @@ class InteractionGraph:
             expression_threshold: threshold to apply to expression score in tissue.
             Ignored if tissue is None.
 
-        Returns: New sub graph
+        Returns:
+            New sub graph.
 
         """
 
@@ -392,7 +401,8 @@ class InteractionGraph:
         Args:
             sequence_regex: regex to search in sequences
 
-        Returns: a list of nodes (uniprot ids)
+        Returns:
+            a list of nodes (uniprot ids).
 
         """
         node_results = []
@@ -406,7 +416,8 @@ class InteractionGraph:
             node: node to propagate
             diameter: diameter that still need to be propagated
 
-        Returns: node results
+        Returns:
+            node results.
 
         """
 
@@ -442,7 +453,8 @@ class InteractionGraph:
             expression_threshold: threshold to apply to expression score in tissue.
             Ignored if tissue is None.
 
-        Returns: New graph with results
+        Returns:
+            New graph with results.
 
         """
 
@@ -468,7 +480,8 @@ class InteractionGraph:
             separated by underscore "_". As a split is applied, the order is not important.
             limit: limit to the number of prints.
 
-        Returns: nothing
+        Returns:
+            None.
 
         """
         print_spec = print_spec.split("_")
@@ -508,7 +521,8 @@ class InteractionGraph:
             nodes: nodes to be searched for.
             limit: limit to print.
 
-        Returns: None.
+        Returns:
+            None.
 
         """
         t_n = self.maps.tissue_num_mapping
@@ -541,7 +555,8 @@ class InteractionGraph:
             bp_size_thresh : a threshold on size on number proteins in biological processes
             limit: limit to print.
 
-        Returns: None
+        Returns:
+            None.
 
         """
         nodes = set(graph.nodes())
@@ -577,7 +592,8 @@ class InteractionGraph:
             cc_size_thresh : a threshold on size on number proteins in molecular function.
             limit: limit to print.
 
-        Returns: None
+        Returns:
+            None.
 
         """
         nodes = set(graph.nodes())
