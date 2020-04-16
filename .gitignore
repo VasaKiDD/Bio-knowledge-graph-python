@@ -113,7 +113,7 @@ ENV/
 .ci
 
 # Notebooks by default are ignored
-*.ipynb
+#*.ipynb
 
 data/
 *.lz4

@@ -314,7 +314,8 @@ class InteractionGraph:
             underscore "_". As a split is applied, the order is not important.
             tissue: restrict the search by tissue (exemple "lung"). Default None and ignored.
             score_threshold: threshold to apply to edges in subgraph, between 0 and 1 as
-            the scores expression_threshold: threshold to apply to expression score in tissue.
+            the scores.
+            expression_threshold: threshold to apply to expression score in tissue.
             Ignored if tissue is None.
 
         Returns: New sub graph
@@ -404,10 +405,10 @@ class InteractionGraph:
         if node not in self.nodes():
             return []
 
+        node_results = [node]
         if diameter == 0:
-            return [node]
+            return node_results
         else:
-            node_results = []
             if self.is_directed:
                 # adjacents = list(set(self.successors(node)).union(self.predecessors(node)))
                 adjacents = list(set(self.successors(node)))
@@ -508,7 +509,7 @@ class InteractionGraph:
         expr_data = np.array(expr_data)
         # expr_data += 1e-14
         # expr_data = -1.0 * expr_data * np.log(expr_data)
-        expr_data = expr_data.sum(axis=0)
+        expr_data = expr_data.mean(axis=0)
 
         cpt = 0
         for ix in np.argsort(-expr_data):
@@ -554,13 +555,13 @@ class InteractionGraph:
             print("\t", ontologies[ix])
             cpt += 1
 
-    def most_present_cellular_components(self, graph, tissue, mf_size_thresh=0, limit=10):
+    def most_present_cellular_components(self, graph, tissue, cc_size_thresh=0, limit=10):
         """
         Similar to most_affected_biological_processes; but for cellular components.
         Args:
             graph: sub graph to print most affected cellular components
             tissue: string, the tissue where to analyze the biological processes
-            mf_size_thresh : a threshold on size on number proteins in molecular function
+            cc_size_thresh : a threshold on size on number proteins in molecular function
             limit: limit to print
 
         Returns: None
@@ -571,7 +572,7 @@ class InteractionGraph:
         res_vector = []
         for ontology in self.maps.cell_components_union.keys():
             ontology_prots = set(self.maps.cell_components_union[ontology])
-            if len(ontology_prots) > mf_size_thresh:
+            if len(ontology_prots) > cc_size_thresh:
                 common = nodes.intersection(ontology_prots)
                 res = 0.0
                 for prot in common:
