@@ -28,8 +28,6 @@ We gathered data from several sources:
 pip install pybiographs # Not available
 ```
 
-Note : For now, just the cloning is available. As soon as the repository becomes non-beta, a pip package will be registered.
-
 ## Usage
 
 ```python
@@ -51,8 +49,7 @@ covid_data = pickle.load(open('data/covid/covid_data.pck', "rb"))
 
 https://bio-knowledge-graph-python.readthedocs.io/en/latest/?badge=latest
 
-Soon available
-  
+
 ## Infos abouts protein-protein interaction graphs
 
 InteractionGraph(directed=False) returns a networkX nx.Graph() wrapped with other methods to study graph (see docs/files)
