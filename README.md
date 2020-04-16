@@ -25,7 +25,7 @@ We gathered data from several sources:
 ## Installation
 
 ```python
-pip install pybiographs # Not available
+pip install pybiographs
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ pip install pybiographs # Not available
 ```python
 import subprocess
 subprocess.Popen(["python3","-m","http.server"])
-from pybiographs import InteractionGraph, OntologyGraph, Mappings
+from pybiographs import InteractionGraph, OntologyGraph, Mappings, CovidData
 directed_graph = InteractionGraph(directed=True)
 undirected_graph = InteractionGraph(directed=False)
 bp_ontology = OntologyGraph('biological_processes')
@@ -41,14 +41,12 @@ mf_ontology = OntologyGraph('molecular_functions')
 cc_ontology = OntologyGraph('cell_components')
 maps = Mappings()
 print(directed_graph.maps.names)
-covid_interacting_proteins = pickle.load(open('data/covid/covid_interacting_nodes.pck', "rb"))
-covid_data = pickle.load(open('data/covid/covid_data.pck', "rb"))
+covid_data = CovidData()
 ```
 
 ## Documentation
 
 https://bio-knowledge-graph-python.readthedocs.io/en/latest/?badge=latest
-
 
 ## Infos abouts protein-protein interaction graphs
 
